@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost:3306
--- Thời gian đã tạo: Th9 19, 2020 lúc 06:03 PM
+-- Thời gian đã tạo: Th9 25, 2020 lúc 09:20 AM
 -- Phiên bản máy phục vụ: 10.3.16-MariaDB
 -- Phiên bản PHP: 7.3.12
 
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `id14885923_atw`
 --
-CREATE DATABASE IF NOT EXISTS `id14885923_atw` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `id14885923_atw`;
 
 -- --------------------------------------------------------
 
@@ -47,6 +45,28 @@ INSERT INTO `tb_danhmuc` (`id`, `name`, `active`, `create_at`, `update_at`) VALU
 (40, 'Samsung', 1, '2020-09-11 08:45:10', '2020-09-11 08:45:10'),
 (45, 'test thêm cho chắc', 1, '2020-09-19 11:49:50', '2020-09-19 11:49:50'),
 (46, 'thề, lần cuối thật', 0, '2020-09-19 12:02:21', '2020-09-19 12:02:21');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tb_nguoidung`
+--
+
+CREATE TABLE `tb_nguoidung` (
+  `id` int(11) NOT NULL,
+  `ten` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `ma` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `quyen` tinyint(4) NOT NULL DEFAULT 0,
+  `create_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `update_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tb_nguoidung`
+--
+
+INSERT INTO `tb_nguoidung` (`id`, `ten`, `ma`, `quyen`, `create_at`, `update_at`) VALUES
+(1, 'tung', 'tung', 1, '2020-09-22 17:15:55', '2020-09-22 17:15:55');
 
 -- --------------------------------------------------------
 
@@ -110,6 +130,12 @@ ALTER TABLE `tb_danhmuc`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `tb_nguoidung`
+--
+ALTER TABLE `tb_nguoidung`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `tb_sanpham`
 --
 ALTER TABLE `tb_sanpham`
@@ -124,6 +150,12 @@ ALTER TABLE `tb_sanpham`
 --
 ALTER TABLE `tb_danhmuc`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+
+--
+-- AUTO_INCREMENT cho bảng `tb_nguoidung`
+--
+ALTER TABLE `tb_nguoidung`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `tb_sanpham`
