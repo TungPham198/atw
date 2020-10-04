@@ -5,7 +5,7 @@
 		public $link;
 
 		function Database(){
-			$this->link = mysqli_connect("localhost","id14885923_studyictu","TungPham1998@","id14885923_atw") or die("không kết nối tới csdl");
+			$this->link = mysqli_connect("18.188.145.180","root","tung","id14885923_atw") or die("không kết nối tới csdl");
 			mysqli_set_charset($this->link,"utf8");
 		}
 
