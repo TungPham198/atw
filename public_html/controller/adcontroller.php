@@ -154,7 +154,7 @@
 		            $path ="public/upload/".$file_name;//đường dẫn lưu file
 		            $file_tmp =$_FILES['image']['tmp_name'];
 		            move_uploaded_file($file_tmp,$path);//lưu file
-		            unlink("public/upload/".$sp['image']);//xoa file cu
+		            //unlink("public/upload/".$sp['image']);//xoa file cu
 		        }else{
 		            $file_name = $sp['image'];
 		        }
