@@ -1,4 +1,6 @@
 <?php 
+
+// test
 	session_start();
 	if(isset($_GET['ht'])){
 		require_once 'controller/adcontroller.php';
